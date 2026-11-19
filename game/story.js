@@ -179,6 +179,7 @@ window.CASE_STORY = {
       clues:["partial_invoice","double_writeoff"],
       choices:[
         {text:"Сверить накладную с книгой склада",to:"warehouse"},
+        {text:"Восстановить последовательность правок ведомости",to:"ledger_reconstruction"},
         {text:"Найти исходный негатив фотографии",to:"photographer"},
         {text:"Спросить Ларина через его знакомую Марину",to:"marina"}
       ]
@@ -260,6 +261,7 @@ window.CASE_STORY = {
         {text:"Проверить подписи и почерк",to:"handwriting"},
         {text:"Поговорить с Зориным о двойной записи",to:"zorin"},
         {text:"Найти пропавший реестр возвратов",to:"archive"},
+        {text:"Поговорить с бывшей делопроизводительницей",to:"archive_worker"},
         {text:"Проверить денежные переводы",to:"bank_records"}
       ]
     },
@@ -332,7 +334,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Проверить, мог ли Рудин успеть к дому Ларина",to:"route_puzzle"},
         {text:"Найти независимое подтверждение визита к сестре",to:"sister"},
-        {text:"Спросить о тёмном пальто",to:"marina"}
+        {text:"Спросить о тёмном пальто",to:"marina"},
+        {text:"Проверить водителя, который видел Рудина ночью",to:"taxi_driver"}
       ]
     },
     route_puzzle: {
