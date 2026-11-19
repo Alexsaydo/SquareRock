@@ -1005,7 +1005,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Установить точное место съёмки",to:"private_warehouse"},
         {text:"Показать снимок Рудину",to:"rudin_final"},
-        {text:"Проверить календарь и время снимка",to:"call_timeline"}
+        {text:"Проверить календарь и время снимка",to:"call_timeline"},
+        {text:"Изучить журнал проявки",to:"lab_notebook"}
       ]
     },
     old_editor: {
