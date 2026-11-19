@@ -25,5 +25,17 @@ while (queue.length) {
 }
 for (const id of ids) if (!seen.has(id)) errors.push("Unreachable scene: " + id);
 const wordCount = Object.values(s.scenes).reduce((n,sc)=>n+sc.text.join(" ").split(/\s+/).filter(Boolean).length,0);
+const engine = require("fs").readFileSync(__dirname + "/index.html", "utf8");
+const requiredGateClues = [
+  "original_ledger","three_person_scheme","bank_transfer_chain","zorin_document_access",
+  "bronze_repair_order","expert_weapon_match","figure_scratch_match","figure_can_be_weapon",
+  "zorin_route_window","timeline_rebuilt","last_fifty_minutes","zorin_alibi_gap",
+  "home_line_call","station_audio_not_location","sound_timeline_understood","radio_original_confirmed",
+  "garage_visit_after_murder","zorin_returned_after_one","zorin_private_warehouse","packing_fabric"
+];
+for (const clue of requiredGateClues) {
+  if (!Object.values(s.scenes).some(scene => (scene.clues || []).includes(clue))) errors.push("Final gate clue is not supplied by any scene: " + clue);
+}
+if (!engine.includes("function investigationGaps()") || !engine.includes("state.visited.length<24")) errors.push("Final investigation gate or 24-scene minimum is missing");
 console.log("Scenes:", ids.length, "Reachable:", seen.size, "Text words:", wordCount, "Endings:", endings);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
