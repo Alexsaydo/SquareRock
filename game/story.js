@@ -819,7 +819,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Проверить первую поддельную подпись",to:"handwriting"},
         {text:"Спросить Зорина о конфликте из-за денег",to:"confrontation"},
-        {text:"Проверить переводы на счёт Ларина",to:"bank_records"}
+        {text:"Проверить переводы на счёт Ларина",to:"bank_records"},
+        {text:"Поднять старое судебное дело",to:"court_record"}
       ]
     },
     medical_followup: {
