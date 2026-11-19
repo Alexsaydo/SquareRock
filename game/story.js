@@ -770,7 +770,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Проверить список доступа с Климовым",to:"klimov"},
         {text:"Сверить время выдачи с последним платежом",to:"bank_records"},
-        {text:"Предъявить Зорину факт доступа к оригиналу",to:"confrontation"}
+        {text:"Предъявить Зорину факт доступа к оригиналу",to:"confrontation"},
+        {text:"Восстановить порядок выдачи документов",to:"document_order_puzzle"}
       ]
     },
     garage: {
@@ -1316,7 +1317,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Спросить Зорина, зачем он приходил в аппаратную",to:"confrontation"},
         {text:"Сверить кассету с записью Ларина",to:"tape"},
-        {text:"Проверить журнал пропусков",to:"rail_shift"}
+        {text:"Проверить журнал пропусков",to:"rail_shift"},
+        {text:"Проверить вывод по датам и звуку",to:"sound_puzzle"}
       ]
     },
     camera_log: {
@@ -1358,7 +1360,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Сверить сумму с блокнотом Ларина",to:"accountant_notes"},
         {text:"Спросить Рудина о полученных деньгах",to:"private_debt"},
-        {text:"Предъявить банковскую подпись Зорину",to:"confrontation"}
+        {text:"Предъявить банковскую подпись Зорину",to:"confrontation"},
+        {text:"Сверить остаток наличных",to:"cash_flow_puzzle"}
       ]
     },
     lab_counter: {
