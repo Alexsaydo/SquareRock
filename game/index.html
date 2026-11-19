@@ -202,7 +202,7 @@ function loadState(){try{const raw=localStorage.getItem(SAVE_KEY);if(!raw)return
 function toast(message){let t=document.getElementById("toast");if(!t){t=document.createElement("div");t.id="toast";t.style.cssText="position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#252c2e;border:1px solid #596064;border-radius:7px;padding:9px 14px;font:12px system-ui;color:#eee;z-index:40";document.body.appendChild(t)}t.textContent=message;t.style.display="block";clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(()=>t.style.display="none",1800)}
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function addClues(list){(list||[]).forEach(id=>{if(clueBook[id]&&!state.clues.includes(id))state.clues.push(id)})}
-function updateProgress(){const done=state?state.visited.length:0;document.getElementById("progress").style.width=Math.min(100,done/32*100)+"%"}
+function updateProgress(){const done=state?state.visited.length:0;document.getElementById("progress").style.width=Math.min(100,done/Object.keys(STORY.scenes).length*100)+"%"}
 function startGame(){const old=loadState();if(old&&!old.ended){if(confirm("Найдено сохранение. Продолжить расследование?")){state=old;render();return}}state=freshState();state.started=true;enterScene(STORY.start)}
 function resumeGame(){state=loadState()||freshState();state.started=true;render()}
 function newGame(){if(confirm("Начать дело заново? Текущее сохранение будет заменено.")){state=freshState();state.started=true;enterScene(STORY.start);}}
