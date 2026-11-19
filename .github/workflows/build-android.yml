@@ -25,7 +25,7 @@ jobs:
           import re
           from pathlib import Path
           html = Path('index.html').read_text(encoding='utf-8')
-          scripts = re.findall(r'<script>([\\s\\S]*?)</script>', html)
+          scripts = re.findall(r'<script>([\s\S]*?)</script>', html)
           assert scripts, 'No inline game engine found'
           Path('/tmp/game-inline.js').write_text(scripts[-1], encoding='utf-8')
           PY
