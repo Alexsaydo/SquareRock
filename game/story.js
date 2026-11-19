@@ -53,6 +53,7 @@ window.CASE_STORY = {
         {text:"Осмотреть задний выход и подвал",to:"basement"},
         {text:"Поговорить с участковым о первоначальном осмотре",to:"police"},
         {text:"Расспросить соседа сверху",to:"second_neighbor"},
+        {text:"Поговорить с дворником о заднем дворе",to:"witness_street"},
         {text:"Узнать, кто из сотрудников «Кареллеса» хромает",to:"company"}
       ]
     },
@@ -915,8 +916,10 @@ window.CASE_STORY = {
       clues:["second_neighbor_steps","machine_oil_smell"],
       choices:[
         {text:"Проверить лестничную площадку и подвал",to:"basement"},
+        {text:"Поговорить с дворником",to:"witness_street"},
         {text:"Сопоставить походку посетителя с Рудиным",to:"rudin_alibi"},
-        {text:"Поговорить с Тамарой ещё раз",to:"building"}
+        {text:"Поговорить с Тамарой ещё раз",to:"building"},
+        {text:"Уточнить показания Николая",to:"night_interview"}
       ]
     },
     basement: {
