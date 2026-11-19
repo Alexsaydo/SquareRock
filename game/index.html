@@ -261,7 +261,10 @@ const REQUIRED_EVIDENCE=[
 ];
 function investigationGaps(){
  const found=new Set(state.clues);
- const gaps=REQUIRED_EVIDENCE.filter(group=>!group.clues.some(clue=>found.has(clue)));
+ const gaps=REQUIRED_EVIDENCE.map(group=>{
+  const missing=group.clues.filter(clue=>!found.has(clue));
+  return missing.length?{label:group.label,missing:missing.length}:null;
+ }).filter(Boolean);
  if(state.visited.length<24)gaps.unshift({label:"Полное расследование",missing:24-state.visited.length});
  return gaps;
 }
