@@ -37,5 +37,9 @@ for (const clue of requiredGateClues) {
   if (!Object.values(s.scenes).some(scene => (scene.clues || []).includes(clue))) errors.push("Final gate clue is not supplied by any scene: " + clue);
 }
 if (!engine.includes("function investigationGaps()") || !engine.includes("state.visited.length<24")) errors.push("Final investigation gate or 24-scene minimum is missing");
+if (!engine.includes("group.clues.filter(clue=>!found.has(clue))")) errors.push("Final gate must require every clue in each evidence line, not just one");
+for (const lead of ["bank_records","private_warehouse","repair_shop","route_final","expert_final","phone_trace","case_file","evidence_review"]) {
+  if (!s.scenes[lead]) errors.push("Final gate lead points to missing scene: " + lead);
+}
 console.log("Scenes:", ids.length, "Reachable:", seen.size, "Text words:", wordCount, "Endings:", endings);
 if (errors.length) { console.error(errors.join("\n")); process.exit(1); }
