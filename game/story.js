@@ -66,7 +66,8 @@ window.CASE_STORY = {
       ],
       clues:["editor_copy","threat_call","warehouse_photo"],
       choices:[
-        {text:"Попросить Белова описать пропавшую накладную",to:"missing_invoice"},
+        {text:"Попросить Белову описать пропавшую накладную",to:"missing_invoice"},
+        {text:"Найти бывшего заместителя редактора",to:"old_editor"},
         {text:"Найти фотографа и исходные негативы",to:"photographer"},
         {text:"Проверить склад № 4",to:"warehouse"},
         {text:"Поговорить с водителем машины № 22",to:"courier"}
@@ -83,7 +84,8 @@ window.CASE_STORY = {
       choices:[
         {text:"Уточнить у телефониста историю автоответчика",to:"telephone"},
         {text:"Выяснить, кто такой Воронцов",to:"watchmaker"},
-        {text:"Проверить значение записи «М. — 6:10»",to:"marina"}
+        {text:"Проверить значение записи «М. — 6:10»",to:"marina"},
+        {text:"Поговорить с дежурной по станции",to:"rail_dispatcher"}
       ]
     },
     clock_puzzle: {
@@ -266,6 +268,7 @@ window.CASE_STORY = {
         {text:"Проверить подписи и почерк",to:"handwriting"},
         {text:"Поговорить с Зориным о двойной записи",to:"zorin"},
         {text:"Найти пропавший реестр возвратов",to:"archive"},
+        {text:"Проверить личный блокнот Ларина",to:"accountant_notes"},
         {text:"Поговорить с бывшей делопроизводительницей",to:"archive_worker"},
         {text:"Проверить денежные переводы",to:"bank_records"}
       ]
@@ -377,6 +380,7 @@ window.CASE_STORY = {
         {text:"Спросить Марину о брате и его долгах",to:"sister"},
         {text:"Установить личность человека по перстню",to:"ring_puzzle"},
         {text:"Найти вторую половину ведомости",to:"archive"},
+        {text:"Осмотреть подсобку фотолаборатории",to:"photolab_backroom"},
         {text:"Проверить письмо дочери Ларина",to:"daughter_letter"}
       ]
     },
@@ -1044,7 +1048,8 @@ window.CASE_STORY = {
       clues:["old_court_case","prior_false_testimony"],
       choices:[
         {text:"Сопоставить старые показания с новыми документами",to:"ledger"},
-        {text:"Спросить адвоката о доверенности Ларина",to:"lawyer"},
+        {text:"Вернуться к доске доказательств",to:"evidence_review"},
+        {text:"Спросить о доверенности Ларина",to:"evidence_review"},
         {text:"Проверить, кто давал деньги грузчикам",to:"bank_records"}
       ]
     },
